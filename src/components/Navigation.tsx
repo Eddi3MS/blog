@@ -15,12 +15,6 @@ const Nav = () => {
       <Link href="/artigos/coroa-das-lagrimas" className="nav-link">
         Coroa das Lágrimas
       </Link>
-      <Link href="/artigos/rosario-em-latim" className="nav-link">
-        Rosário em Latim
-      </Link>
-      <Link href="/artigos/rosario-em-portugues" className="nav-link">
-        Rosário em Português
-      </Link>
     </>
   )
 }

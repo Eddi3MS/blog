@@ -2,14 +2,21 @@
 
 import { PostCard } from '@/components/PostCard'
 import { allPosts } from 'contentlayer/generated'
+import { compareDesc } from 'date-fns'
 import { useState } from 'react'
 
 export default function Page() {
   const [search, setSearch] = useState('')
+  const posts = allPosts.toSorted((a, b) =>
+    compareDesc(
+      new Date(a.date),
+      new Date(b.date) || a.title.localeCompare(b.title),
+    ),
+  )
 
   const filteredPosts = search
-    ? allPosts.filter((p) => p.title.toLocaleLowerCase().includes(search))
-    : allPosts
+    ? posts.filter((p) => p.title.toLocaleLowerCase().includes(search))
+    : posts
 
   return (
     <section>
@@ -25,11 +32,9 @@ export default function Page() {
       </header>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {filteredPosts
-          .toSorted((a, b) => a.title.localeCompare(b.title))
-          .map((p) => (
-            <PostCard key={p._id} {...p} />
-          ))}
+        {filteredPosts.map((p) => (
+          <PostCard key={p._id} {...p} />
+        ))}
       </div>
     </section>
   )

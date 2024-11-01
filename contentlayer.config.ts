@@ -29,6 +29,11 @@ const Post = defineDocumentType(() => ({
       description: 'Will it show in home page?',
       required: true,
     },
+    category: {
+      type: 'string',
+      description: 'Will be used to filter it to categorized menus',
+      required: false,
+    },
   },
   computedFields: {
     url: {

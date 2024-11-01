@@ -5,9 +5,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
-  const posts = allPosts.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date)),
-  )
+  const posts = allPosts
+    .filter((p) => p.featured)
+    .toSorted(
+      (a, b) =>
+        compareDesc(new Date(a.date), new Date(b.date)) ||
+        a.title.localeCompare(b.title),
+    )
 
   return (
     <div>
@@ -27,12 +31,12 @@ export default function Home() {
 
       <div className="mt-8 space-y-8 border-t border-gray-200 pt-8 dark:border-gray-700">
         <div className="flex justify-between">
-          <h2>Recentes:</h2>
+          <h2>Destaque:</h2>
           <Link
             href="/artigos"
-            className="flex items-center gap-1 text-xs font-semibold text-blue-500 underline underline-offset-1 hover:text-blue-600"
+            className="flex items-end text-sm text-accent-foreground underline underline-offset-1 hover:text-blue-500"
           >
-            ver mais
+            ver todos
           </Link>
         </div>
 

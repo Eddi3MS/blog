@@ -1,6 +1,5 @@
 import { WEBSITE_HOST_URL } from '@/lib/constants'
 import { allPosts } from 'contentlayer/generated'
-
 import type { MDXComponents } from 'mdx/types'
 import type { Metadata } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
@@ -35,14 +34,14 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime: date,
-      url: `${WEBSITE_HOST_URL}/posts/${url}`,
+      url: `${WEBSITE_HOST_URL}/artigos/${url}`,
     },
     twitter: {
       title,
       description,
     },
     alternates: {
-      canonical: `${WEBSITE_HOST_URL}/posts/${url}`,
+      canonical: `${WEBSITE_HOST_URL}/artigos/${url}`,
     },
   }
 }
