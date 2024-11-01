@@ -1,6 +1,7 @@
 'use client'
 
 import { PostCard } from '@/components/PostCard'
+import { normalizedCompare } from '@/lib/utils'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
 import { useState } from 'react'
@@ -15,12 +16,7 @@ export default function Page() {
   )
 
   const filteredPosts = search
-    ? posts.filter((p) =>
-        p.title
-          .normalize('NFD')
-          .toLocaleLowerCase()
-          .includes(search.normalize('NFD').toLocaleLowerCase()),
-      )
+    ? posts.filter((p) => normalizedCompare(p.title, search))
     : posts
 
   return (
