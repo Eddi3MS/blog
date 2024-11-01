@@ -145,11 +145,6 @@
   border: initial;
 }
 
-.prose img {
-  /* Don't apply styles to next/image */
-  @apply m-0;
-}
-
 .prose p {
   margin: 0 !important;
 }
@@ -243,6 +238,10 @@ input[type='email'] {
 
 .prose :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   @apply text-xl font-semibold tracking-tight md:text-2xl;
+}
+
+.prose :where(h3):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  @apply text-base font-semibold tracking-tight md:text-lg;
 }
 
 /* Custom Scrollbar */

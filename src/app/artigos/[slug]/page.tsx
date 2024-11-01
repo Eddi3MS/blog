@@ -1,11 +1,11 @@
 import { WEBSITE_HOST_URL } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 import { allPosts } from 'contentlayer/generated'
 import type { MDXComponents } from 'mdx/types'
 import type { Metadata } from 'next'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import NextImage from 'next/image'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -57,17 +57,26 @@ const mdxComponents: MDXComponents = {
       {children}
     </Link>
   ),
-  Image: (props) => <NextImage className="rounded-lg" {...props} />,
+  Image: ({ className, ...props }) => (
+    <NextImage
+      className={cn('mx-auto my-0 rounded-md', className)}
+      {...props}
+    />
+  ),
 }
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
 
-  if (!post) {
-    notFound()
-  }
-
   const MDXContent = useMDXComponent(post.body.code)
+
+  if (!post) {
+    return (
+      <>
+        <p>not found</p>
+      </>
+    )
+  }
 
   return (
     <div className="flex flex-col items-center">
