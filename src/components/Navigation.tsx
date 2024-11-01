@@ -78,9 +78,7 @@ export function Navigation() {
         </button>
 
         <div
-          className={`${isOpen ? 'translate-x-0' : '-translate-x-full'} absolute inset-0 z-10 flex h-[100svh] transform flex-col items-center justify-center gap-4
-          
-          bg-slate-100 transition-transform duration-300 ease-in-out`}
+          className={`${isOpen ? 'translate-x-0' : '-translate-x-full'} absolute inset-0 z-10 flex h-[100svh] transform flex-col items-center justify-center gap-4 bg-background transition-transform duration-300 ease-in-out`}
         >
           <Nav />
         </div>
