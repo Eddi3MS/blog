@@ -63,6 +63,20 @@ const mdxComponents: MDXComponents = {
       {...props}
     />
   ),
+  Youtube: ({ id, title }: { id: string; title: string }) => {
+    return (
+      <div>
+        <iframe
+          className="aspect-video w-full"
+          src={'https://www.youtube.com/embed/' + id}
+          title={title}
+          allow="encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowFullScreen={true}
+          referrerPolicy="no-referrer"
+        ></iframe>
+      </div>
+    )
+  },
 }
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
