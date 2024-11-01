@@ -15,7 +15,12 @@ export default function Page() {
   )
 
   const filteredPosts = search
-    ? posts.filter((p) => p.title.toLocaleLowerCase().includes(search))
+    ? posts.filter((p) =>
+        p.title
+          .normalize('NFD')
+          .toLocaleLowerCase()
+          .includes(search.normalize('NFD').toLocaleLowerCase()),
+      )
     : posts
 
   return (
