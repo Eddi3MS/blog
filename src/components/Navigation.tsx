@@ -12,9 +12,6 @@ const Nav = () => {
       <Link href="/artigos" className="nav-link">
         Artigos
       </Link>
-      <Link href="/artigos/coroa-das-lagrimas" className="nav-link">
-        Coroa das Lágrimas
-      </Link>
     </>
   )
 }

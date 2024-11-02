@@ -53,11 +53,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={cn('flex min-h-[100svh] flex-col', inter.className)}>
+      <body
+        className={cn('flex min-h-[100svh] flex-col gap-4', inter.className)}
+      >
         <ThemeProvider attribute="class" defaultTheme="">
-          <header className="sticky top-0 z-10 bg-background">
+          <header className="sticky top-0 z-10 border-b bg-background">
             <Container>
-              <div className="flex items-center justify-between py-6">
+              <div className="flex items-center justify-between py-4">
                 <Navigation />
                 <ThemeSwitch />
               </div>

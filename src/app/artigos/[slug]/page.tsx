@@ -96,6 +96,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   return (
     <div className="flex flex-col items-center">
       <h1>{post.title}</h1>
+      <p className="mt-2 text-muted-foreground">{post.description}</p>
 
       <article className="prose mt-8 dark:prose-invert">
         <MDXContent components={mdxComponents} />
