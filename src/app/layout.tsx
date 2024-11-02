@@ -11,15 +11,15 @@ import { cn } from '@/lib/utils'
 const inter = Inter({ subsets: ['latin'] })
 
 const meta = {
-  title: 'Sabaoth',
-  description: 'Orações católicas',
-  image: `${WEBSITE_HOST_URL}/bridge.jpg`,
+  title: 'Emunah',
+  description: 'Conteúdo Católico',
+  image: `${WEBSITE_HOST_URL}/ns.jpg`,
 }
 
 export const metadata: Metadata = {
   title: {
     default: meta.title,
-    template: '%s | Sabaoth',
+    template: '%s | Emunah',
   },
   description: meta.description,
   openGraph: {

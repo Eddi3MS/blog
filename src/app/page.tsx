@@ -23,9 +23,9 @@ export default function Home() {
           alt="Imagem de Nossa Senhora"
           className="hidden aspect-[4/6] rounded-md md:block"
         />
-        <div className="flex flex-1 flex-col justify-center">
-          <h1>Sabaoth</h1>
-          <p>Conteúdo Católico.</p>
+        <div className="flex flex-1 flex-col justify-center gap-2">
+          <h1>Emunah</h1>
+          <p className="text-muted-foreground">Conteúdo Católico</p>
         </div>
       </div>
 
