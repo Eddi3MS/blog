@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 import './global.css'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
-import IMG from '../../public/images/ns.jpg'
+import IMG from '../../public/images/slmgm.jpg'
 
 const inter = Inter({ subsets: ['latin'] })
 
