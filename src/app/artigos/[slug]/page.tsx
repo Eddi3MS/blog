@@ -73,6 +73,7 @@ const mdxComponents: MDXComponents = {
           allow="encrypted-media; gyroscope; picture-in-picture; fullscreen"
           allowFullScreen={true}
           referrerPolicy="no-referrer"
+          loading="lazy"
         ></iframe>
       </div>
     )
