@@ -7,13 +7,14 @@ import type { Metadata } from 'next'
 import './global.css'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import IMG from '../../public/images/ns.jpg'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const meta = {
   title: 'Emunah',
   description: 'Conteúdo Católico',
-  image: `${WEBSITE_HOST_URL}/ns.jpg`,
+  image: IMG.src,
 }
 
 export const metadata: Metadata = {
