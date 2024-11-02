@@ -72,7 +72,7 @@ export default function RootLayout({
           <footer className="pb-6 pt-6 md:mt-16">
             <Container>
               <p className="text-center">
-                ©Sabaoth {new Date().getFullYear()}. Alguns direitos reservados
+                ©Emunah {new Date().getFullYear()}. Alguns direitos reservados
               </p>
             </Container>
           </footer>
