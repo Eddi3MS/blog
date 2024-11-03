@@ -161,11 +161,6 @@
   margin-block: 1.5rem;
 }
 
-.break {
-  display: block;
-  margin-block: 12px;
-}
-
 .prose ul > li {
   margin: 0;
   padding: 0;

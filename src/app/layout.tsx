@@ -18,6 +18,11 @@ const meta = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000'
+      : WEBSITE_HOST_URL,
+  ),
   title: {
     default: meta.title,
     template: '%s | Emunah',
@@ -30,11 +35,7 @@ export const metadata: Metadata = {
     siteName: meta.title,
     locale: 'pt-BR',
     type: 'website',
-    images: [
-      {
-        url: meta.image,
-      },
-    ],
+    images: meta.image,
   },
   twitter: {
     title: meta.title,
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
   },
   alternates: {
-    canonical: WEBSITE_HOST_URL,
+    canonical: '/',
   },
 }
 
@@ -69,7 +70,7 @@ export default function RootLayout({
           <main className="flex-1">
             <Container>{children}</Container>
           </main>
-          <footer className="pb-6 pt-6 md:mt-16">
+          <footer className="pb-6 pt-6">
             <Container>
               <p className="text-center">
                 ©Emunah {new Date().getFullYear()}. Alguns direitos reservados

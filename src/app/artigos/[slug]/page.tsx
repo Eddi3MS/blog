@@ -78,6 +78,14 @@ const mdxComponents: MDXComponents = {
       </div>
     )
   },
+  Br: ({ className }: { className: string }) => {
+    return (
+      <span
+        className={cn('block pt-2 md:pt-3', className)}
+        aria-hidden={true}
+      />
+    )
+  },
 }
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
