@@ -70,9 +70,9 @@ const mdxComponents: MDXComponents = {
           className="aspect-video w-full"
           src={'https://www.youtube.com/embed/' + id}
           title={title}
-          allow="encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen={true}
-          referrerPolicy="no-referrer"
+          referrerPolicy="strict-origin-when-cross-origin"
           loading="lazy"
         ></iframe>
       </div>
